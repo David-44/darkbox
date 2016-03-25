@@ -1,0 +1,103 @@
+.d-overlay {
+  -webkit-perspective: 2000px;
+          perspective: 2000px;
+  background-color: rgba(0,0,0,0.8);
+
+  width: 100%;
+  height: 200%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.d-overlay img {
+  width: auto;
+  height: auto;
+  max-width: 80%;
+  max-height: 80%;
+  position: fixed;
+  -webkit-transform-origin: 0% 0% 0;
+      -ms-transform-origin: 0% 0% 0;
+          transform-origin: 0% 0% 0;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+
+
+
+.animopaque{
+  background-color: rgba(0, 0, 0, 0);
+  -webkit-animation: animopaque .4s;
+          animation: animopaque .4s;
+}
+
+@-webkit-keyframes animopaque {
+  to {
+    background-color: rgba(0,0,0,0.8);
+  }
+}
+
+@keyframes animopaque {
+  to {
+    background-color: rgba(0,0,0,0.8);
+  }
+}
+
+.animclear{
+  background-color: rgba(0, 0, 0, 0.8);
+  -webkit-animation: animclear .2s;
+          animation: animclear .2s;
+}
+
+@-webkit-keyframes animclear {
+  to {
+    background-color: rgba(0,0,0,0);
+  }
+}
+
+@keyframes animclear {
+  to {
+    background-color: rgba(0,0,0,0);
+  }
+}
+
+.d-leftarrow,
+.d-rightarrow {
+  cursor: pointer;
+  position: fixed;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 1000;
+  border: 20px solid transparent;
+}
+
+.d-leftarrow {
+  left: 5%;
+}
+
+.d-rightarrow {
+  left: 95%
+}
+
+@media screen and (max-width: 500px) {
+  .d-leftarrow,
+  .d-rightarrow {
+    width: 25px;
+    height: 25px;
+    border: 30px solid transparent;
+  }
+}
+
+
+
+
+
+
