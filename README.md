@@ -1,6 +1,8 @@
 # Darkbox
 A lightweight lightbox using CSS3 animations as transitions.
 
+The [demo](http://morisset-web.co.uk/darkbox-demo.html) is here.
+
 #### Why another damn lightbox ?
 Because I was working on another damn carousel using CSS 3D transforms and animations, and I thought It would be nice to do something similar with a lightbox.
 
@@ -9,7 +11,7 @@ Because I was working on another damn carousel using CSS 3D transforms and anima
 #### The bad
 Let's start with what might cause problems, so we're done with it.
 * No support for IE8 and below. If you want a fallback, make sure to enclose your images in an anchor tag linking to the image.
-* the lightbox will work on browsers that don't support animations (IE9 and opera mini), but the transitions will not be smooth.
+* Darkbox will work on browsers that don't support animations (IE9 and opera mini), but the transitions will not be smooth.
 
 #### The good :
 * No need for external libraries.
@@ -20,7 +22,7 @@ Let's start with what might cause problems, so we're done with it.
 
 #### The debatable
 * All images are preloaded during initialisation. This makes animations smooth but can put a lot of strain on your network connection if darkbox is used with a lot of high quality images.
-* The background blur is achieved by appending a new stylesheet in the head element that queries `body > *:not(.d-overlay)`. This option can be disabled in the options by setting `backgroundBlur = false`. See options.
+* The background blur is achieved by appending a new stylesheet in the head element that queries `body > *:not(.d-overlay)`. This option can be disabled in the options by setting `backgroundBlur = false`. See how to customise below.
 
 ## Basic setup and functionalities
 
@@ -59,6 +61,61 @@ Copy darkbox.min.js and link to it **at the end of your document** and initialis
 
 That is all you need to do to get darkbox to work. Now, to customize it.
 
+## Customising before using
+
+Two things can be customised :
+* The main CSS file, by modifying the main styling, adding or removing animations
+* javascript options
+
+#### Default CSS
+darkbox.css contains all the CSS necessary for darkbox. It contains 4 parts.
+
+##### main styling of the overlay and image
+The basics. Note that `perspective` and `transform-origin` are used only for 3D transforms, you can remove them if you don't need them.
+
+##### Overlay smooth transitions
+Small animations used to avoid the overlay appearing at once.
+
+##### Arrows
+Styling of the svg arrows. There is a huge transparent border applied to make the touch area larger on touch devices.
+
+##### Fade in, fade out
+The default animation.
+
+#### Animations used for transitions.
+
+All animations can be seen on the [demo](http://morisset-web.co.uk/darkbox-demo.html) page.
+By default, they all have a duration of 1 second for the out, and one second for the in. In order to modify it, you will need to change the duration of the animation **both in the CSS and in the javascript options**.
+
+#### javascript options
+
+Here are the options and default values :
+
+```javascript
+{
+  imageIn: "fadein",      // Class of the animation used when opening the overlay
+  imageOut: "fadeout",    // Class of the animation used when closing the overlay
+  imageLeftIn: "",        // Class of the animation used for the image entering the screen after the left arrow is clicked.
+  imageLeftOut: "",       // Class of the animation used for the image leaving the screen after the left arrow is clicked.
+  imageRightIn: "",       // Class of the animation used for the image entering the screen after the right arrow is clicked.
+  imageRightOut: "",      // Class of the animation used for the image leaving the screen after the right arrow is clicked.
+  transitionTime: 1000,   // time before the "in" animation starts
+  fileTypes: /\.(jpg|png|gif|jpeg|tif|tiff|svg)$/i,   // file types accepted
+  backgroundBlur: true    // Set to false if you don't want a backgroundBlur stylesheet appended to the head element
+}
+```
+If imageLeftIn or imageRightIn are not set, the effect for imageIn is used instead. Same for imageOut.
+
+##### Example of initialisation with option modifications :
+
+```javascript
+var options = {
+  imageLeftIn = "cardleftin",
+  imageLeftOut = "cardleftout",
+  backgroundBlur: false
+};
+darkbox.init(options);
+```
 
 
 
