@@ -1,5 +1,5 @@
 # Darkbox
-A lightweight lightbox using CSS animations as transitions.
+A lightweight lightbox using CSS animations.
 
 The [demo](http://morisset-web.co.uk/darkbox-demo.html) is here.
 
@@ -21,7 +21,7 @@ Let's start with what might cause problems, so we're done with it.
 
 #### The debatable
 * All images are preloaded during initialisation. This makes animations smoother but can put a lot of strain on your network connection if darkbox is used with a lot of high quality images.
-* The background blur is achieved by appending a new stylesheet in the head element that queries `body > *:not(.d-overlay)`. This option can be disabled in the options by setting `backgroundBlur = false`. See how to customise below.
+* The background blur is achieved by appending a new stylesheet in the head element. It contains one rule on the selector `body > *:not(.d-overlay)`. This option can be disabled in the options by setting `backgroundBlur = false`. See how to customise below.
 
 ## Basic setup and functionalities
 
