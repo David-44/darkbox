@@ -17,11 +17,10 @@ Let's start with what might cause problems, so we're done with it.
 * No need for external libraries.
 * Fully responsive.
 * Super lightweight : Less than 4KB for the minified javascript and 2KB for the CSS.
-* Easy to customise : On top of the few options that can be set on the module itself, most of the work is done with CSS.
-* Easy to extend with your own image transitions
+* Effects are all done with CSS, which makes it easy to customise or extend with your own animations.
 
 #### The debatable
-* All images are preloaded during initialisation. This makes animations smooth but can put a lot of strain on your network connection if darkbox is used with a lot of high quality images.
+* All images are preloaded during initialisation. This makes animations smoother but can put a lot of strain on your network connection if darkbox is used with a lot of high quality images.
 * The background blur is achieved by appending a new stylesheet in the head element that queries `body > *:not(.d-overlay)`. This option can be disabled in the options by setting `backgroundBlur = false`. See how to customise below.
 
 ## Basic setup and functionalities
@@ -59,22 +58,22 @@ Copy darkbox.min.js and link to it **at the end of your document** and initialis
 <script>darkbox.init();</script>
 ```
 
-That is all you need to do to get darkbox to work. Now, to customize it.
+That is all you need to do to get darkbox to work with the default animation.
 
 ## Customising before using
 
 Two things can be customised :
-* The main CSS file, by modifying the main styling, adding or removing animations
+* The main CSS file : darkbox.css .
 * javascript options
 
 #### Default CSS
 darkbox.css contains all the CSS necessary for darkbox. It contains 4 parts.
 
 ##### main styling of the overlay and image
-The basics. Note that `perspective` and `transform-origin` are used only for 3D transforms, you can remove them if you don't need them.
+The basics. `perspective` and `transform-origin` are used only for 3D transforms, they can be removed if not needed.
 
 ##### Overlay smooth transitions
-Small animations used to avoid the overlay appearing at once.
+Small animations used to avoid the overlay appearing at once. Nothing breaks if they're removed, the overlay will just appear abruptly.
 
 ##### Arrows
 Styling of the svg arrows. There is a huge transparent border applied to make the touch area larger on touch devices.
@@ -84,12 +83,13 @@ The default animation.
 
 #### Animations used for transitions.
 
-All animations can be seen on the [demo](http://morisset-web.co.uk/darkbox-demo.html) page.
-By default, they all have a duration of 1 second for the out, and one second for the in. In order to modify it, you will need to change the duration of the animation **both in the CSS and in the javascript options**.
+Extra animations are in the file animations.css
+They can be seen on the [demo](http://morisset-web.co.uk/darkbox-demo.html) page.
+By default, they all have a duration of 1 second for the out, and one second for the in. In order to modify it, you will need to change the duration of the animation **both in the CSS declarations and in the javascript options**.
 
 #### javascript options
 
-Here are the options and default values :
+Options available and default values :
 
 ```javascript
 {
@@ -110,8 +110,8 @@ If imageLeftIn or imageRightIn are not set, the effect for imageIn is used inste
 
 ```javascript
 var options = {
-  imageLeftIn = "cardleftin",
-  imageLeftOut = "cardleftout",
+  imageLeftIn: "cardleftin",
+  imageLeftOut: "cardleftout",
   backgroundBlur: false
 };
 darkbox.init(options);
