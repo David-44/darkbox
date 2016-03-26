@@ -366,8 +366,8 @@
 /*******************/
 
 .d-overlay .fallout {
-  -webkit-animation: downOut 1s ease-in 1 forwards;
-          animation: downOut 1s ease-in 1 forwards;
+  -webkit-animation: downOut 1s linear 1 forwards;
+          animation: downOut 1s linear 1 forwards;
 }
 
 @keyframes downOut {
@@ -385,23 +385,25 @@
 }
 
 .d-overlay .fallin {
-  -webkit-transform: translate(-50%, -350%);
-          transform: translate(-50%, -350%);
-  -webkit-animation: downIn 1s cubic-bezier(.1, .25,1,.25) 1 forwards;
-          animation: downIn 1s cubic-bezier(.1, .25,1,.25) 1 forwards;
+  -webkit-transform: translate(-50%, -400%);
+          transform: translate(-50%, -400%);
+  -webkit-animation: downIn 1s linear 1 forwards;
+          animation: downIn 1s linear 1 forwards;
 }
 
 @keyframes downIn {
-  80%, to {
+  60%, to {
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
-    -webkit-animation-timing-function: ease;
-            animation-timing-function: ease;
+    -webkit-animation-timing-function: cubic-bezier(.215, .61, .355, 1);
+            animation-timing-function: cubic-bezier(.215, .61, .355, 1);
   }
 
-  94% {
-    -webkit-transform: translate(-50%, -60%);
-            transform: translate(-50%, -60%);
+  83% {
+    -webkit-transform: translate(-50%, -75%);
+            transform: translate(-50%, -75%);
+    -webkit-animation-timing-function: cubic-bezier(.55, .055, .675, .19);
+            animation-timing-function: cubic-bezier(.55, .055, .675, .19);
   }
 }
 
