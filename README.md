@@ -1,5 +1,5 @@
 # Darkbox
-A lightweight lightbox using CSS3 animations as transitions.
+A lightweight lightbox using CSS animations as transitions.
 
 The [demo](http://morisset-web.co.uk/darkbox-demo.html) is here.
 
