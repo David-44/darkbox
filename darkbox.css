@@ -1,3 +1,5 @@
+/* main styling */
+
 .d-overlay {
   -webkit-perspective: 2000px;
           perspective: 2000px;
@@ -29,7 +31,7 @@
 }
 
 
-
+/* overlay smooth transition */
 
 .animopaque{
   background-color: rgba(0, 0, 0, 0);
@@ -67,6 +69,10 @@
   }
 }
 
+
+
+/* Arrows */
+
 .d-leftarrow,
 .d-rightarrow {
   cursor: pointer;
@@ -96,7 +102,42 @@
   }
 }
 
+/* fadein, fadeout */
 
+.fadein {
+  opacity: 0;
+  -webkit-animation: fadeIn 1s ease-in 1 forwards;
+          animation: fadeIn 1s ease-in 1 forwards;
+}
+
+@-webkit-keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeout{
+  -webkit-animation: fadeOut 1s ease-out 1 forwards;
+          animation: fadeOut 1s ease-out 1 forwards;
+}
+
+@-webkit-keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
 
 
 
