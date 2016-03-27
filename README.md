@@ -26,8 +26,8 @@ Let's start with what might cause problems, so we're done with it.
 ## Basic setup and functionalities
 
 #### In your markup
-Add a class of `darkbox` to each images container and that's it. 
-Image containers can be any kind of elements : ul, div, section, as long as they contain links to images in the following form :
+Add a class of `darkbox` to each image container and that's it. 
+Image containers can be any kind of element :  ul, div, section, as long as they contain links to images in the following form :
 * Any element with an href or src attribute linking to an image (most commonly `<a>` and `<img>` elements).
 * Any `<li>` or `<figure>` element containing anchors or images.
 
@@ -42,16 +42,16 @@ Any element not in this list will just be ignored.
   <li><a href="http://google.com"></a></li>
 </ul>
 ```
-This will create an array of 4 images, the last anchor will silently be ignored since it doesn't link to an image.
+This will create an array of 4 images. The last anchor is ignored since it doesn't link to an image.
 
 #### The stylesheet
-Copy darkbox.min.css in your project folder and link to it in your document's head.
+Copy darkbox.min.css into your project folder and link to it in your document's head.
 ```html
 <link rel="stylesheet" type="text/css" href="darkbox.min.css">`
 ```
 The defaut stylesheet uses a fadein / fadeout transition lasting 1 second each (2 seconds in total).
 
-#### the javascript
+#### The javascript
 Copy darkbox.min.js and link to it **at the end of your document** and initialise it with another script tag.
 ```html
 <script src="darkbox.min.js"></script>
@@ -60,7 +60,7 @@ Copy darkbox.min.js and link to it **at the end of your document** and initialis
 
 That is all you need to do to get darkbox to work with the default animation.
 
-## Customising before using
+## Customise before use
 
 Two things can be customised :
 * The main CSS file : darkbox.css .
@@ -70,13 +70,13 @@ Two things can be customised :
 darkbox.css contains all the CSS necessary for darkbox. It contains 4 parts.
 
 ##### main styling of the overlay and image
-The basics. `perspective` and `transform-origin` are used only for 3D transforms, they can be removed if not needed.
+`perspective` and `transform-origin` are used only for 3D transforms, they can be removed if not needed.
 
 ##### Overlay smooth transitions
-Small animations used to avoid the overlay appearing at once. Nothing breaks if they're removed, the overlay will just appear abruptly.
+Small animations are used to avoid the overlay appearing instantly. Nothing breaks if they're removed, the overlay will just appear abruptly.
 
 ##### Arrows
-Styling of the svg arrows. There is a huge transparent border applied to make the touch area larger on touch devices.
+When styling the svg arrows please note that there is a huge transparent border applied to make the touch area larger on touch devices.
 
 ##### Fade in, fade out
 The default animation.
@@ -85,9 +85,9 @@ The default animation.
 
 Extra animations are in the file animations.css
 They can be seen on the [demo](http://morisset-web.co.uk/darkbox-demo.html) page.
-By default, they all have a duration of 1 second for the out, and one second for the in. In order to modify it, you will need to change the duration of the animation **both in the CSS declarations and in the javascript options**.
+By default, they all have a duration of 1 second for the transition start, and one second for the transistion to end. In order to modify it, you will need to change the duration of the animation **both in the CSS declarations and in the javascript options**.
 
-#### javascript options
+#### Javascript options
 
 Options available and default values :
 
