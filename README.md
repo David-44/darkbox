@@ -1,7 +1,7 @@
 # Darkbox
 A lightweight lightbox using CSS animations.
 
-The [demo](http://morisset-web.co.uk/darkbox-demo.html) is here.
+The [demo](http://morisset-web.co.uk/darkbox-demo/index.html) is here.
 
 #### Why another damn lightbox ?
 Because I was working on another damn carousel using CSS 3D transforms and animations, and I thought It would be nice to do something similar with a lightbox.
